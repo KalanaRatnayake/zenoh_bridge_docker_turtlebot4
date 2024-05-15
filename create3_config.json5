@@ -129,8 +129,8 @@
           get_result: [
             ".*long_mission=3600", 
             ".*short_action=10.0",
-            "irobot_create_msgs/action/Dock=120.0",
-            "irobot_create_msgs/action/Undock=10.0",
+            ".*/dock=120.0",
+            ".*/undock=10.0",
             ],
         }
       }
