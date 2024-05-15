@@ -165,7 +165,7 @@
   ////
   connect: {
     endpoints: [
-      "tcp/192.168.2.63:7447"
+      "tcp/__RPI4_IP_PLACEHOLDER__:7447"
     ]
   },
 

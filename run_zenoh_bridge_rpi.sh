@@ -13,6 +13,9 @@ fi
 # Path to the Zenoh configuration file
 CONFIG_FILE="/app/rpi_config.json5"
 
+# Replace the placeholder in the configuration file
+sed -i "s/__RPI4_IP_PLACEHOLDER__/$RPI4_IP/g" $CONFIG_FILE
+
 # Run the process
 /zenoh-bridge-ros2dds -c $CONFIG_FILE
 
