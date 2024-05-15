@@ -1,6 +1,6 @@
 # 🔵️🐉️ Zenoh Bridge Docker for TurtleBot 4 🐉️🔵️
 
-* Use this repo's `docker-compose.yaml` to deploy a zenoh solution for the TurtleBot4 (iRobot Create 3 + Raspberry Pi 4) that **aids discovery and integration with The Construct's Real Robot Lab service.**
+Use this repo's `docker-compose.yaml` to deploy a zenoh solution for the TurtleBot4 (iRobot Create 3 + Raspberry Pi 4) that **aids discovery and integration with The Construct's Real Robot Lab service.**
 
 This repo contains a docker image and compose file that runs the following:
 
@@ -29,6 +29,7 @@ The **requirements** for this container to work are:
     volumes:
       - /var/lib/theconstruct.rrl/cyclonedds.xml:/var/lib/theconstruct.rrl/cyclonedds.xml # The Construct RRL XML config file
 ```
+
 1. Run `docker compose -f /PATH_TO_COMPOSE_FILE/docker-compose.yaml up -d` 
 
 The detached argument `-d` is optional; no terminal is needed if command includes it.
