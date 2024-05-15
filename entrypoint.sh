@@ -1,5 +1,7 @@
 #!/bin/ash
 
+sleep 60
+
 # Execute the first script
 /app/run_zenoh_bridge_create3.sh &
 
