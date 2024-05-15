@@ -126,7 +126,12 @@
         actions: {
           send_goal: 1.0,
           cancel_goal: 1.0,
-          get_result: [".*long_mission=3600", ".*short_action=10.0"],
+          get_result: [
+            ".*long_mission=3600", 
+            ".*short_action=10.0",
+            "irobot_create_msgs/action/Dock=120.0",
+            "irobot_create_msgs/action/Undock=10.0",
+            ],
         }
       }
     },
