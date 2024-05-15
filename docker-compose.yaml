@@ -5,7 +5,7 @@ services:
     build:
       context: .
     network_mode: "host"
+    environment:
+      - RPI4_IP=192.168.2.63 # Replace with your actual Raspberry Pi IP address
     volumes:
-      - /var/lib/theconstruct.rrl/cyclonedds.xml:/var/lib/theconstruct.rrl/cyclonedds.xml
-    # environment:
-    #   - CYCLONEDDS_URI=file:///var/lib/theconstruct.rrl/cyclonedds.xml
+      - /var/lib/theconstruct.rrl/cyclonedds.xml:/var/lib/theconstruct.rrl/cyclonedds.xml # The Construct RRL XML config file
