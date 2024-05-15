@@ -16,12 +16,12 @@ This setup ensures that the ROS 2 data published by the entire robot is seen as 
 
 The **requirements** for this container to work are:
 
-* Must set correct RPi4 IP address in `docker-compose.yaml`.
 * TurtleBot 4 RPi4 must have The Construct's RRL service installed.
 * Create 3 settings (access & change through web server):
     1. `ROS_DOMAIN_ID=0`
     2. `RMW_IMPLEMENTATION=rwm_cyclonedds_cpp`
     3. Default RMW XML Profile (leave `Beta Features -> Override RMW Profile` blank)
+* Must set correct RPi4 IP address in `docker-compose.yaml`.
 
 ```
     environment:
