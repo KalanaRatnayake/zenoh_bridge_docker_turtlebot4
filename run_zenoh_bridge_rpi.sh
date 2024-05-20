@@ -2,7 +2,7 @@
 export ROS_DISTRO=humble
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export CYCLONEDDS_URI=file:///var/lib/theconstruct.rrl/cyclonedds.xml
-export ROS_DOMAIN_ID=1
+export ROS_DOMAIN_ID=0
 
 # Get the IP address from the environment variable
 RPI4_IP=${RPI4_IP:-}

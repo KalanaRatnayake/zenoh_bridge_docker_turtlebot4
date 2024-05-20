@@ -2,6 +2,8 @@
 export ROS_DISTRO=humble
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 unset CYCLONEDDS_URI
+export ROS_DOMAIN_ID=1
+
 # TODO: add an XML config for Create 3 to protect even more
 
 # Run the process
