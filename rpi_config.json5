@@ -225,7 +225,7 @@
   ////
   //// mode: The bridge's mode (router, peer or client)
   ////
-  //mode: "router",
+  mode: "peer",
 
   ////
   //// Which endpoints to connect to. E.g. tcp/localhost:7447.
@@ -233,7 +233,7 @@
   ////
   connect: {
     endpoints: [
-      "tcp/__RPI4_IP_PLACEHOLDER__:7447"
+      "tcp/localhost:7447"
     ]
   },
 
@@ -245,7 +245,7 @@
   ////
   listen: {
     endpoints: [
-      "tcp/[::]:7445"
+      "tcp/localhost:7445"
     ]
   },
 
