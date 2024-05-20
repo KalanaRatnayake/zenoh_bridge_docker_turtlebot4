@@ -2,6 +2,7 @@
 export ROS_DISTRO=humble
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 unset CYCLONEDDS_URI
+# TODO: add an XML config for Create 3 to protect even more
 
 # Run the process
 /zenoh-bridge-ros2dds -c /app/create3_config.json5
