@@ -5,8 +5,6 @@ services:
     build:
       context: .
     network_mode: "host" # use the same network as the host
-    environment:
-      - RPI4_IP=192.168.2.63 # Replace with your actual Raspberry Pi IP address
     volumes:
       - /var/lib/theconstruct.rrl/cyclonedds.xml:/var/lib/theconstruct.rrl/cyclonedds.xml # The Construct RRL XML config file
     restart: always # This line ensures the container restarts on reboot

@@ -20,15 +20,6 @@ The **requirements** for this container to work are:
 * **Create 3 settings** (access & change through web server):
     1. `ROS_DOMAIN_ID=1`
     2. `RMW_IMPLEMENTATION=rwm_cyclonedds_cpp`
-    3. Default RMW XML Profile (leave `Beta Features -> Override RMW Profile` blank)
-* Must set **correct RPi4 IP address** in `docker-compose.yaml`:
-
-```
-    environment:
-      - RPI4_IP=192.168.2.63 # Replace with your actual Raspberry Pi IP address
-    volumes:
-      - /var/lib/theconstruct.rrl/cyclonedds.xml:/var/lib/theconstruct.rrl/cyclonedds.xml # The Construct RRL XML config file
-```
 
 1. Run `docker compose -f /PATH_TO_COMPOSE_FILE/docker-compose.yaml up -d` 
 
