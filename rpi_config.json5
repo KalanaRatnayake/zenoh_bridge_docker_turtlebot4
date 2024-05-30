@@ -245,7 +245,7 @@
   ////
   listen: {
     endpoints: [
-      "tcp/localhost:7445"
+      "tcp/0.0.0.0:7445"
     ]
   },
 
