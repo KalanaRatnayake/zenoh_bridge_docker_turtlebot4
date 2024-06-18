@@ -231,7 +231,7 @@
   ////
   connect: {
     endpoints: [
-      "tcp/localhost:7445"
+      "tcp/localhost:7447"
     ]
   },
 
@@ -243,7 +243,7 @@
   ////
   listen: {
     endpoints: [
-      "tcp/localhost:7447"
+      "tcp/localhost:7445"
     ]
   },
 

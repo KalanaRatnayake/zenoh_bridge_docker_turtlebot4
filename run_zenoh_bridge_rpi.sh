@@ -1,7 +1,6 @@
 #!/bin/ash
 export ROS_DISTRO=humble
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-export CYCLONEDDS_URI=file:///var/lib/theconstruct.rrl/cyclonedds.xml
 export ROS_DOMAIN_ID=0
 
 # Path to the Zenoh configuration file
