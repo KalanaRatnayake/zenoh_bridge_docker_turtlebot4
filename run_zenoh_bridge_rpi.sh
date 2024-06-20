@@ -1,4 +1,13 @@
 #!/bin/ash
+
+# Check if the cyclonedds.xml file exists in the expected location
+if [ -f "/var/lib/theconstruct.rrl/cyclonedds.xml" ]; then
+    # Set the CYCLONEDDS_URI environment variable
+    export CYCLONEDDS_URI="file:///var/lib/theconstruct.rrl/cyclonedds.xml"
+else
+    echo "cyclonedds.xml does not exist. Skipping setting CYCLONEDDS_URI."
+fi
+
 export ROS_DISTRO=humble
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export ROS_DOMAIN_ID=0
