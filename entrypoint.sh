@@ -20,6 +20,8 @@ run_script /app/run_zenoh_bridge_create3.sh $log_file_1 &
 # Get PID of the first script
 pid1=$!
 
+sleep 2
+
 # Execute the second script and log its output
 run_script /app/run_zenoh_bridge_rpi.sh $log_file_2 &
 
