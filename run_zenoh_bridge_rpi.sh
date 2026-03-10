@@ -1,9 +1,9 @@
 #!/bin/ash
 
 # Check if the cyclonedds.xml file exists in the expected location
-if [ -f "/var/lib/theconstruct.rrl/cyclonedds.xml" ]; then
+if [ -f "/var/lib/theconstruct.rrl/cyclonedds_husarnet.xml" ]; then
     # Set the CYCLONEDDS_URI environment variable
-    export CYCLONEDDS_URI="file:///var/lib/theconstruct.rrl/cyclonedds.xml"
+    export CYCLONEDDS_URI="file:///var/lib/theconstruct.rrl/cyclonedds_husarnet.xml"
 else
     echo "cyclonedds.xml does not exist. Skipping setting CYCLONEDDS_URI."
 fi
