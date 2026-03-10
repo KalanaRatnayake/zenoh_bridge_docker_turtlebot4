@@ -16,7 +16,6 @@
       ///      This identifier will also appears in the logs of all other bridges on discovery events.
       ///      By default a random UUID
       ////
-      id: "cleaner-2-create3",
 
       ////
       //// nodename: A ROS node name to be used by this bridge.
