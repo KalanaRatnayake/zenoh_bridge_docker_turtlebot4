@@ -1,10 +1,9 @@
 services:
   zenoh-bridge-turtlebot4:
-    image: rodrigo55/zenoh-bridge-ros2dds:turtlebot4
+    image: theconstructai/zenoh-bridge-ros2dds:turtlebot4
     container_name: zenoh-bridge-turtlebot4
-    build:
-      context: .
-    network_mode: "host" # use the same network as the host
+    network_mode: "host" 
+    restart: always # Ensures the container restarts on reboot
+    # Volume below is for The Construct's Real Robot Lab service
     volumes:
-      - /var/lib/theconstruct.rrl/cyclonedds.xml:/var/lib/theconstruct.rrl/cyclonedds.xml # The Construct RRL XML config file
-    restart: always # This line ensures the container restarts on reboot
+     - /var/lib/theconstruct.rrl/cyclonedds_husarnet.xml:/var/lib/theconstruct.rrl/cyclonedds_husarnet.xml
