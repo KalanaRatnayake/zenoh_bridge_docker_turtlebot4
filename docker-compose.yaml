@@ -6,4 +6,4 @@ services:
     restart: always # Ensures the container restarts on reboot
     # Volume below is for The Construct's Real Robot Lab service
     volumes:
-     - /var/lib/theconstruct.rrl/cyclonedds.xml:/var/lib/theconstruct.rrl/cyclonedds.xml
+     - /var/lib/theconstruct.rrl/cyclonedds_husarnet.xml:/var/lib/theconstruct.rrl/cyclonedds_husarnet.xml
