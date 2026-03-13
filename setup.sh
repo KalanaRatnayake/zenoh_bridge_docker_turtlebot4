@@ -5,19 +5,35 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SERVICE_NAME="zenoh-bridge.service"
 SERVICE_PATH="/etc/systemd/system/${SERVICE_NAME}"
 
-echo "[1/8] Checking docker..."
+echo "[1/9] Checking docker..."
 command -v docker >/dev/null 2>&1 || {
   echo "Error: docker is not installed."
   exit 1
 }
 
-echo "[2/8] Checking docker compose..."
+echo "[2/9] Checking docker compose..."
 docker compose version >/dev/null 2>&1 || {
   echo "Error: docker compose plugin is not available."
   exit 1
 }
 
-echo "[3/8] Writing systemd service..."
+echo "[3/9] Preparing optional Real Robot Service config path..."
+RRL_CONFIG="/var/lib/theconstruct.rrl/cyclonedds_husarnet.xml"
+RRL_DIR="$(dirname "$RRL_CONFIG")"
+
+sudo mkdir -p "$RRL_DIR"
+
+if [ -d "$RRL_CONFIG" ]; then
+  echo "Found directory at $RRL_CONFIG where a file should be. Removing it."
+  sudo rm -rf "$RRL_CONFIG"
+fi
+
+if [ ! -e "$RRL_CONFIG" ]; then
+  echo "Creating placeholder config file."
+  sudo touch "$RRL_CONFIG"
+fi
+
+echo "[4/9] Writing systemd service..."
 cat <<EOF >/tmp/${SERVICE_NAME}
 [Unit]
 Description=Zenoh bridge docker compose stack
@@ -45,19 +61,19 @@ EOF
 sudo cp /tmp/${SERVICE_NAME} "${SERVICE_PATH}"
 rm -f /tmp/${SERVICE_NAME}
 
-echo "[4/8] Reloading systemd..."
+echo "[5/9] Reloading systemd..."
 sudo systemctl daemon-reload
 
-echo "[5/8] Enabling docker..."
+echo "[6/9] Enabling docker..."
 sudo systemctl enable docker >/dev/null 2>&1 || true
 
-echo "[6/8] Enabling ${SERVICE_NAME}..."
+echo "[7/9] Enabling ${SERVICE_NAME}..."
 sudo systemctl enable "${SERVICE_NAME}"
 
-echo "[7/8] Stopping any existing compose stack..."
+echo "[8/9] Stopping any existing compose stack..."
 sudo docker compose -f "${REPO_DIR}/docker-compose.yaml" down || true
 
-echo "[8/8] Starting ${SERVICE_NAME}..."
+echo "[9/9] Starting ${SERVICE_NAME}..."
 sudo systemctl restart "${SERVICE_NAME}"
 
 echo
