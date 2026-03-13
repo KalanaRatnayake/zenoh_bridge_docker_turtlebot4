@@ -1,5 +1,7 @@
 #!/bin/ash
 
+sleep 3
+
 # Function to run a script and log its output
 run_script() {
     local script=$1
