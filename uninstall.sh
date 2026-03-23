@@ -18,6 +18,6 @@ echo "[4/5] Reloading systemd..."
 sudo systemctl daemon-reload
 
 echo "[5/5] Bringing compose stack down..."
-sudo docker compose -f "${REPO_DIR}/docker-compose.yaml" down || true
+sudo docker compose -f "${REPO_DIR}/compose.yaml" down || true
 
 echo "Uninstall complete."

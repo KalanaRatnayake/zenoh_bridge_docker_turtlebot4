@@ -10,7 +10,7 @@ fi
 
 export ROS_DISTRO=humble
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-export ROS_DOMAIN_ID=0
+export ROS_DOMAIN_ID=$RASPPI4_DOMAIN_ID
 
 # Path to the Zenoh configuration file
 CONFIG_FILE="/app/rpi_config.json5"

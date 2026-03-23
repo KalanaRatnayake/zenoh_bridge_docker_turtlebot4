@@ -1,6 +1,10 @@
 # Use the official Zenoh Bridge ROS2 DDS image as a base
 FROM eclipse/zenoh-bridge-ros2dds:latest
 
+# Set environment variables for the ROS2 domain IDs for the Raspberry Pi 4 and Create 3
+ENV RASPPI4_DOMAIN_ID=0
+ENV CREATE3_DOMAIN_ID=1
+
 # Set the working directory inside the container
 WORKDIR /app
 

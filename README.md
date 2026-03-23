@@ -1,5 +1,9 @@
 # 🔵️🐉️ Zenoh Bridge Docker for TurtleBot 4 🐉️🔵️
 
+This is a Github import of the [theconstructcore/zenoh_bridge_docker_turtlebot4](https://bitbucket.org/theconstructcore/zenoh_bridge_docker_turtlebot4/src/master/) repository. Checkout the original repo at prior link.  Main changes include,
+
+- Exposing CREATE3_DOMAIN_ID and RASPPI4_DOMAIN_ID as compose.yaml file based ENV parameters (compared to fixed 0 and 1)
+
 This repository contains a docker zenoh bridge setup that gets rid of the TurtleBot4 DDS problems (not being able to see all topics) forever.
 
 ---
@@ -20,7 +24,7 @@ turtlebot4-setup
 ```
 3. Navigate with arrow keys and Enter to `ROS Setup` -> `Bash Setup`
 4. Set the following parameters:
-    * `ROS_DOMAIN_ID=0`
+    * `ROS_DOMAIN_ID=0` (or any other value)
     * `RMW_IMPLEMENTATION=rmw_cyclonedds_cpp`
     * `CYCLONEDDS_URI=[]` (Empty).
     * Any namespace can be added.
@@ -35,7 +39,7 @@ turtlebot4-setup
 1. Access the Create 3 configuration by typing `YOUR_TB4_IP_ADDRESS:8080` in a web browser.
 2. Navigate to `Application` -> `Configuration`
 3. Set the following parameters:
-    * `ROS_DOMAIN_ID=1`
+    * `ROS_DOMAIN_ID=1` (or any other value)
     * `RMW_IMPLEMENTATION=rmw_cyclonedds_cpp`
     * Uncheck `Enable Fast DDS discovery server?`.
     * Any namespace can be added.

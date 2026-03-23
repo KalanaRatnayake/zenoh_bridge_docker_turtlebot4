@@ -1,9 +1,12 @@
 services:
   zenoh-bridge-turtlebot4:
-    image: theconstructai/zenoh-bridge-ros2dds:turtlebot4
+    image: ghcr.io/kalanaratnayake/zenoh_bridge:turtlebot4
     container_name: zenoh-bridge-turtlebot4
     network_mode: "host" 
     restart: unless-stopped
+    environment:
+      - RASPPI4_DOMAIN_ID=10
+      - CREATE3_DOMAIN_ID=11
     # Volume below is for The Construct's Real Robot Lab service
     volumes:
      - /var/lib/theconstruct.rrl/cyclonedds_husarnet.xml:/var/lib/theconstruct.rrl/cyclonedds_husarnet.xml

@@ -71,7 +71,7 @@ echo "[7/9] Enabling ${SERVICE_NAME}..."
 sudo systemctl enable "${SERVICE_NAME}"
 
 echo "[8/9] Stopping any existing compose stack..."
-sudo docker compose -f "${REPO_DIR}/docker-compose.yaml" down || true
+sudo docker compose -f "${REPO_DIR}/compose.yaml" down || true
 
 echo "[9/9] Starting ${SERVICE_NAME}..."
 sudo systemctl restart "${SERVICE_NAME}"
@@ -82,5 +82,5 @@ echo
 echo "Useful commands:"
 echo "  sudo systemctl status ${SERVICE_NAME}"
 echo "  sudo journalctl -u ${SERVICE_NAME} -b"
-echo "  docker compose -f ${REPO_DIR}/docker-compose.yaml ps"
-echo "  docker compose -f ${REPO_DIR}/docker-compose.yaml logs -f"
+echo "  docker compose -f ${REPO_DIR}/compose.yaml ps"
+echo "  docker compose -f ${REPO_DIR}/compose.yaml logs -f"
