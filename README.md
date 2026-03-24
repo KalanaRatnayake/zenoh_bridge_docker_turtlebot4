@@ -54,7 +54,7 @@ turtlebot4-setup
 1. SSH into your TurtleBot4.
 2. Clone this repository:
 ```
-git clone https://bitbucket.org/theconstructcore/zenoh_bridge_docker_turtlebot4.git
+git clone https://github.com/KalanaRatnayake/zenoh_bridge_docker_turtlebot4.git
 ```
 3. Enter directory:
 ```
